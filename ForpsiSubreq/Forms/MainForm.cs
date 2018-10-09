@@ -10,6 +10,7 @@ using System.Windows.Forms;
 
 namespace ForpsiSubreq
 {
+
     public partial class frmMain : Form
     {
         public frmMain()
@@ -27,13 +28,26 @@ namespace ForpsiSubreq
             ForpsiRequest request = new ForpsiRequest(tbUsername.Text.Trim(), tbPassword.Text.Trim());
             string res = request.PerformLogin().Result;
             res = request.AddDomainRecord(tbDomainID.Text.Trim(), "testx", "212.80.80.2").Result;
-            tbResult.Text = res;
+          //  tbResult.Text = res;
 
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            string[] lines = tbResult.Text.Split( new[] { Environment.NewLine }, StringSplitOptions.None);
+            ParseForm pd = new ParseForm();
+            pd.ShowParseDataDialog();
+            if (pd.DialogResult != DialogResult.OK)
+                return;
+
+            var source = new BindingSource();
+            source.DataSource = pd.DNSRecords;
+            dgRecords.DataSource = source;
+
+            tbErrors.Text = pd.Errors;
+
+
+            
+            /*string[] lines = tbResult.Text.Split( new[] { Environment.NewLine }, StringSplitOptions.None);
 
             StringBuilder sb = new StringBuilder();
 
@@ -47,7 +61,21 @@ namespace ForpsiSubreq
                 sb.Append(Environment.NewLine);
             }
 
-            textBox1.Text = sb.ToString();
+            textBox1.Text = sb.ToString();*/
+            /*TTLParser parser = new TTLParser();
+            int val;
+            try
+            {
+                val = parser.parse(tbDomainID.Text);
+                MessageBox.Show(val.ToString());
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }*/
+
         }
+
+        
     }
 }

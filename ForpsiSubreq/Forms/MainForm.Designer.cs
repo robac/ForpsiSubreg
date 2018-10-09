@@ -32,12 +32,13 @@
             this.label2 = new System.Windows.Forms.Label();
             this.tbUsername = new System.Windows.Forms.TextBox();
             this.tbPassword = new System.Windows.Forms.TextBox();
-            this.tbResult = new System.Windows.Forms.TextBox();
             this.btnLogin = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.tbDomainID = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnLoadData = new System.Windows.Forms.Button();
+            this.dgRecords = new System.Windows.Forms.DataGridView();
+            this.tbErrors = new System.Windows.Forms.TextBox();
+            ((System.ComponentModel.ISupportInitialize)(this.dgRecords)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -73,17 +74,10 @@
             this.tbPassword.Size = new System.Drawing.Size(100, 20);
             this.tbPassword.TabIndex = 3;
             // 
-            // tbResult
-            // 
-            this.tbResult.Location = new System.Drawing.Point(28, 168);
-            this.tbResult.Multiline = true;
-            this.tbResult.Name = "tbResult";
-            this.tbResult.Size = new System.Drawing.Size(421, 356);
-            this.tbResult.TabIndex = 4;
-            // 
             // btnLogin
             // 
-            this.btnLogin.Location = new System.Drawing.Point(15, 105);
+            this.btnLogin.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnLogin.Location = new System.Drawing.Point(15, 601);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Size = new System.Drawing.Size(185, 23);
             this.btnLogin.TabIndex = 5;
@@ -107,41 +101,50 @@
             this.tbDomainID.Size = new System.Drawing.Size(100, 20);
             this.tbDomainID.TabIndex = 7;
             // 
-            // textBox1
+            // btnLoadData
             // 
-            this.textBox1.Location = new System.Drawing.Point(535, 168);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(591, 356);
-            this.textBox1.TabIndex = 8;
+            this.btnLoadData.Location = new System.Drawing.Point(15, 99);
+            this.btnLoadData.Name = "btnLoadData";
+            this.btnLoadData.Size = new System.Drawing.Size(185, 23);
+            this.btnLoadData.TabIndex = 9;
+            this.btnLoadData.Text = "Load records";
+            this.btnLoadData.UseVisualStyleBackColor = true;
+            this.btnLoadData.Click += new System.EventHandler(this.button1_Click);
             // 
-            // button1
+            // dgRecords
             // 
-            this.button1.Location = new System.Drawing.Point(260, 105);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(319, 23);
-            this.button1.TabIndex = 9;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.dgRecords.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgRecords.Location = new System.Drawing.Point(15, 128);
+            this.dgRecords.Name = "dgRecords";
+            this.dgRecords.Size = new System.Drawing.Size(705, 265);
+            this.dgRecords.TabIndex = 10;
+            // 
+            // tbErrors
+            // 
+            this.tbErrors.Location = new System.Drawing.Point(15, 409);
+            this.tbErrors.Multiline = true;
+            this.tbErrors.Name = "tbErrors";
+            this.tbErrors.Size = new System.Drawing.Size(704, 186);
+            this.tbErrors.TabIndex = 11;
             // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1221, 545);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.textBox1);
+            this.ClientSize = new System.Drawing.Size(731, 636);
+            this.Controls.Add(this.tbErrors);
+            this.Controls.Add(this.dgRecords);
+            this.Controls.Add(this.btnLoadData);
             this.Controls.Add(this.tbDomainID);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.btnLogin);
-            this.Controls.Add(this.tbResult);
             this.Controls.Add(this.tbPassword);
             this.Controls.Add(this.tbUsername);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "frmMain";
             this.Text = "Forpsi Subreg";
+            ((System.ComponentModel.ISupportInitialize)(this.dgRecords)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -153,12 +156,12 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox tbUsername;
         private System.Windows.Forms.TextBox tbPassword;
-        private System.Windows.Forms.TextBox tbResult;
         private System.Windows.Forms.Button btnLogin;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox tbDomainID;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnLoadData;
+        private System.Windows.Forms.DataGridView dgRecords;
+        private System.Windows.Forms.TextBox tbErrors;
     }
 }
 

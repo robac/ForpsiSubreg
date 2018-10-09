@@ -39,7 +39,7 @@ namespace ForpsiSubreq
             };
 
             var content = new FormUrlEncodedContent(values);
-            var response = await this.client.PostAsync(ForpsiURL.getLoginURL(), content).ConfigureAwait(false);
+            var response = await this.client.PostAsync(ForpsiConsts.getLoginURL(), content).ConfigureAwait(false);
             var responseString = await response.Content.ReadAsStringAsync().ConfigureAwait(false);
 
             if (responseString.Contains("ARISTIA, spol. s r.o."))
@@ -65,7 +65,7 @@ namespace ForpsiSubreq
             };
 
             var content = new FormUrlEncodedContent(values);
-            var response = await this.client.PostAsync(ForpsiURL.getDomainURL(domainID), content).ConfigureAwait(false);
+            var response = await this.client.PostAsync(ForpsiConsts.getDomainURL(domainID), content).ConfigureAwait(false);
             var responseString = await response.Content.ReadAsStringAsync().ConfigureAwait(false);
 
             return responseString;
